@@ -1,4 +1,4 @@
-<h1>🚀 Painel Administrativo - Agropecuária/Petshop</h1>
+<h1>🚀 Painel Administrativo</h1>
 
 <p>Este projeto é um painel administrativo para gerenciar usuários, produtos, categorias e visualizar gráficos dinâmicos. Ele utiliza <strong>React.js</strong> com <strong>Tailwind CSS</strong> e <strong>Redux Toolkit</strong>.</p>
 
