@@ -42,6 +42,49 @@ yarn dev
 </pre>
 <p>O projeto estará disponível em <a href="http://localhost:5173/" target="_blank">http://localhost:5173/</a> (ou em uma porta alternativa).</p>
 
+<h3>4️⃣ Verifique se o Tailwind CSS Está Funcionando</h3>
+<p>Se quiser testar se o Tailwind está funcionando corretamente, edite o arquivo <code>src/App.tsx</code> e substitua o conteúdo por:</p>
+
+<pre>
+export default function App() {
+  return (
+    <div className="flex justify-center items-center h-screen bg-gray-100">
+      <h1 className="text-4xl font-bold text-blue-600">Tailwind CSS está funcionando! 🎉</h1>
+    </div>
+  );
+}
+</pre>
+
+<h3>5️⃣ Possíveis Problemas</h3>
+<ul>
+  <li>Se o Tailwind não funcionar, verifique se o <code>vite.config.ts</code> contém a configuração correta:</li>
+</ul>
+
+<pre>
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+});
+</pre>
+
+<ul>
+  <li>Verifique também se o <code>tailwind.config.js</code> está correto:</li>
+</ul>
+
+<pre>
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+</pre>
+
 <h2>⚙️ Configuração do ESLint</h2>
 <p>O projeto já possui um arquivo <code>eslint.config.js</code> gerado automaticamente.</p>
 
