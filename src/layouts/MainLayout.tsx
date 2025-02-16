@@ -1,7 +1,18 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
+import { useSidebarItems } from "../data/sidebarItems";
+import Paths from "../routes/paths";
 
 const MainLayout = () => {
+
+    const location = useLocation();
+    const SIDEBAR_ITEMS = useSidebarItems();
+
+    const routeKey = (location.pathname === "/" ? "overview" :
+        Object.keys(Paths).find(key => Paths[key] === location.pathname) || "overview"
+    );
+
     return (
         <div className="flex h-screen overflow-hidden
             bg-gray-50 text-gray-800
@@ -11,7 +22,9 @@ const MainLayout = () => {
                         dark:from-gray-950 dark:via-gray-800 dark:to-gray-950 dark:opacity-80" />
                     <div className="absolute inset-0 backdrop-blur-sm" />
                 </div>
+                
             <Sidebar />
+            <Header title={ SIDEBAR_ITEMS[routeKey]?.name || "Dashboard" } />
             <Outlet />
         </div>
     );
