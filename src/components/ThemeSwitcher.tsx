@@ -9,7 +9,7 @@ const ThemeSwitcher: React.FC = () => {
     const theme = useSelector((state: RootState) => state.theme);
 
     return (
-        <label className="flex space-x-2 cursor-pointer">
+        <label className="flex space-x-2 cursor-pointer items-center">
             <div className="mr-2 text-gray-500"></div>
             <div className="relative">
                 <input
