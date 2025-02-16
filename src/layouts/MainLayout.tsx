@@ -1,9 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Sidebar from "../components/layout/Sidebar";
-import Header from "../components/layout/Header";
+import { Sidebar, Header } from "../components";
 import { useSidebarItems } from "../data/sidebarItems";
 import Paths from "../routes/paths";
-import React from "react";
 
 const MainLayout: React.FC = () => {
 

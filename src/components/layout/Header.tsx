@@ -1,4 +1,4 @@
-import ThemeSwitcher from "../ui/ThemeSwitcher";
+import { ThemeSwitcher } from "../";
 
 interface HeaderProps {
     title: string;

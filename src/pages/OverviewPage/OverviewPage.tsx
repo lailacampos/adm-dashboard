@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import Paths from "../../routes/paths";
-import StatCardContainer from "../../components/ui/StatCardContainer";
-import React from "react";
+import { StatCardContainer } from "../../components";
 
 type RouteKey = keyof typeof Paths;
 

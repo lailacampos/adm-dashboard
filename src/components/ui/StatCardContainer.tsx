@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import StatCard from "./StatCard"
+import { StatCard } from "../";
 import { useStatCardsItems } from "../../data/statCardsItems"
 
 interface StatCardItem {
