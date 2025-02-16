@@ -22,8 +22,8 @@ const AppRoutes = () => {
                     <Route path={Paths.orders} element={<Orders />} />
                     <Route path={Paths.analytics} element={<Analytics />} />
                     <Route path={Paths.settings} element={<Settings />} />
-                    <Route path="*" element={<NotFoundPage />} />
                 </Route>
+                <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </Router>
     );
