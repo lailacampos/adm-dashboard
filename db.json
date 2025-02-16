@@ -1,0 +1,16 @@
+{
+    "products": [
+      { "id": 1, "name": "Ração para Cachorro", "price": 50 },
+      { "id": 2, "name": "Brinquedo para Gato", "price": 20 },
+      { "id": 3, "name": "Coleira", "price": 35 }
+    ],
+    "users": [
+      { "id": 1, "name": "João", "email": "joao@email.com" },
+      { "id": 2, "name": "Maria", "email": "maria@email.com" }
+    ],
+    "orders": [
+      { "id": 1, "userId": 1, "productId": 2, "quantity": 3 },
+      { "id": 2, "userId": 2, "productId": 1, "quantity": 1 }
+    ]
+  }
+  
