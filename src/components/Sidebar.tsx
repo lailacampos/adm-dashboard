@@ -1,30 +1,10 @@
 import { BarChart2, DollarSign, Menu, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from "lucide-react";
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { SIDEBAR_ITEMS_PT_BR_ARRAY } from "../data/sidebarItems";
 
-interface SidebarItem {
-    name: string;
-    icon: React.ComponentType<{ size?: number; style?: React.CSSProperties }>;
-    color: string;
-    href: string;
-};
-const SIDEBAR_ITEMS: SidebarItem[] = [
-    {
-        name: "Overview",
-        icon: BarChart2,
-        color: "#6366f1",
-        href: "/",
-    },
-    { name: "Products", icon: ShoppingBag, color: "#8B5CF6", href: "/products" },
-    { name: "Users", icon: Users, color: "#EC4899", href: "/users" },
-    { name: "Sales", icon: DollarSign, color: "#10B981", href: "/sales" },
-    { name: "Orders", icon: ShoppingCart, color: "#F59E0B", href: "/orders" },
-    { name: "Analytics", icon: TrendingUp, color: "#3B82F6", href: "/analytics" },
-    { name: "Settings", icon: Settings, color: "#6EE7B7", href: "/settings" },
-];
-
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
     return (
         <motion.div
@@ -45,7 +25,7 @@ const Sidebar = () => {
                     <Menu size={24} />
                 </motion.button>
                 <nav className="mt-8 flex-grow">
-                    {SIDEBAR_ITEMS.map((item) => (
+                    {SIDEBAR_ITEMS_PT_BR_ARRAY.map((item) => (
                         <Link key={item.href} to={item.href} className="block">
                             <motion.div
                                 className="flex items-center p-4 text-sm font-medium rounded-lg transition-colors mb-2
