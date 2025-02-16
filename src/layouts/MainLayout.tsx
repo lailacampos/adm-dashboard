@@ -3,14 +3,17 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import { useSidebarItems } from "../data/sidebarItems";
 import Paths from "../routes/paths";
+import React from "react";
 
-const MainLayout = () => {
+const MainLayout: React.FC = () => {
 
     const location = useLocation();
     const SIDEBAR_ITEMS = useSidebarItems();
 
-    const routeKey = (location.pathname === "/" ? "overview" :
-        Object.keys(Paths).find(key => Paths[key] === location.pathname) || "overview"
+    type RouteKey = keyof typeof SIDEBAR_ITEMS;
+
+    const routeKey: RouteKey = (location.pathname === "/" ? "overview" :
+        Object.keys(Paths).find(key => Paths[key] === location.pathname) as RouteKey || "overview"
     );
 
     return (

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 interface SidebarItem {
     name: string;
-    icon: React.ComponentType<{ size?: number; style?: React.CSSProperties }>;
+    icon: React.ElementType;
     color: string;
     href: string;
 };
