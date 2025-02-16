@@ -13,5 +13,6 @@ export default {
     },
     "editor.quickSuggestions": {
         "strings": "on"
-    }
+    },
+    darkMode: "class",
   };  
