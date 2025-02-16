@@ -2,7 +2,7 @@ import { Menu} from "lucide-react";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useSidebarItems } from "../data/sidebarItems";
+import { useSidebarItems } from "../../data/sidebarItems";
 
 const Sidebar: React.FC = () => {
 

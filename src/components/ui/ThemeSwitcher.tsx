@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../store/themeSlice";
-import { AppDispatch, RootState } from "../store";
+import { toggleTheme } from "../../store/themeSlice";
+import { AppDispatch, RootState } from "../../store";
 import React from "react";
 
 const ThemeSwitcher: React.FC = () => {
