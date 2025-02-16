@@ -11,6 +11,7 @@
   <li>OAuth</li>
   <li>React Router</li>
   <li>Axios</li>
+  <li>Lucide React Icons</li>
   <li>Recharts</li>
   <li>Formik + Yup</li>
   <li>Framer Motion</li>
