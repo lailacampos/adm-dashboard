@@ -1,6 +1,9 @@
+import Header from "../../components/Header";
+
 const OverviewPage = () => {
-    return(
+    return (
         <>
+            <Header title="Overview" />
         </>
     );
 }
