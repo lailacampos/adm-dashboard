@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
 
 const MainLayout = () => {
     return (
@@ -12,7 +11,6 @@ const MainLayout = () => {
                         dark:from-gray-950 dark:via-gray-800 dark:to-gray-950 dark:opacity-80" />
                     <div className="absolute inset-0 backdrop-blur-sm" />
                 </div>
-            <Navbar />
             <Sidebar />
             <Outlet />
         </div>

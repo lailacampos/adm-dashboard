@@ -19,9 +19,7 @@ const ThemeSwitcher: React.FC = () => {
                     className="sr-only"
                 />
                 <div className="block w-14 h-8 bg-gray-300 rounded-full"></div>
-                <div className={`absolute left-1 top-1 w-6 h-6 rounded-full transition ${theme === "dark" ? "translate-x-6 bg-gray-900" : "bg-gray-50"}`}>
-
-                </div>
+                <div className={`absolute left-1 top-1 w-6 h-6 rounded-full transition ${theme === "dark" ? "translate-x-6 bg-gray-900" : "bg-gray-50"}`} />
             </div>
         </label>
     );
