@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../store/themeSlice";
 import { AppDispatch, RootState } from "../../store";
-import React from "react";
+import { Switch } from "@headlessui/react";
 
 const ThemeSwitcher: React.FC = () => {
 
@@ -10,16 +10,18 @@ const ThemeSwitcher: React.FC = () => {
 
     return (
         <label className="flex space-x-2 cursor-pointer items-center">
-            <div className="mr-2 text-gray-500"></div>
             <div className="relative">
-                <input
-                    type="checkbox"
+                <Switch
                     checked={theme === "dark"}
                     onChange={() => dispatch(toggleTheme())}
-                    className="sr-only"
-                />
-                <div className="block w-14 h-8 bg-gray-300 rounded-full mr-2"></div>
-                <div className={`absolute left-1 top-1 w-6 h-6 rounded-full transition ${theme === "dark" ? "translate-x-6 bg-gray-900" : "bg-gray-50"}`} />
+                    className={`${theme === "dark" ? "bg-gray-900" : "bg-gray-300"
+                        } relative inline-flex items-center h-8 rounded-full w-14 transition-colors focus:outline-none mt-1 mr-2`}
+                >
+                    <span
+                        className={`${theme === "dark" ? "translate-x-7 bg-gray-900" : "translate-x-1"
+                            } inline-block w-6 h-6 transform bg-white rounded-full transition-transform absolute`}
+                    />
+                </Switch>
             </div>
         </label>
     );
