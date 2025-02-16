@@ -1,11 +1,14 @@
-import { BarChart2, DollarSign, Menu, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from "lucide-react";
+import { Menu} from "lucide-react";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { SIDEBAR_ITEMS_PT_BR_ARRAY } from "../data/sidebarItems";
+import { useSidebarItems } from "../data/sidebarItems";
 
 const Sidebar: React.FC = () => {
+
     const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
+    const SIDEBAR_ITEMS = useSidebarItems();
+
     return (
         <motion.div
             className={`relative z-10 transition-all duration-300 ease-in-out flex-shrink-0 ${isSidebarOpen ? "w-64" : "w-20"}`}
@@ -25,7 +28,7 @@ const Sidebar: React.FC = () => {
                     <Menu size={24} />
                 </motion.button>
                 <nav className="mt-8 flex-grow">
-                    {SIDEBAR_ITEMS_PT_BR_ARRAY.map((item) => (
+                    {Object.values(SIDEBAR_ITEMS).map((item) => (
                         <Link key={item.href} to={item.href} className="block">
                             <motion.div
                                 className="flex items-center p-4 text-sm font-medium rounded-lg transition-colors mb-2

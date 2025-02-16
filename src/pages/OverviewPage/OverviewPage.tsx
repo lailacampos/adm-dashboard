@@ -1,10 +1,13 @@
 import Header from "../../components/Header";
-import { SIDEBAR_ITEMS_PT_BR } from "../../data/sidebarItems";
+import { useSidebarItems } from "../../data/sidebarItems";
 
 const OverviewPage = () => {
+
+    const sidebarItems = useSidebarItems();
+
     return (
         <>
-            <Header title={SIDEBAR_ITEMS_PT_BR.overview.name} />
+            <Header title={sidebarItems.overview.name} />
         </>
     );
 }

@@ -1,4 +1,6 @@
-import { BarChart2, DollarSign, Menu, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from "lucide-react";
+import { BarChart2, DollarSign, Settings, ShoppingBag, ShoppingCart, TrendingUp, Users } from "lucide-react";
+import { RootState } from "../store";
+import { useSelector } from "react-redux";
 
 interface SidebarItem {
     name: string;
@@ -27,5 +29,7 @@ export const SIDEBAR_ITEMS_PT_BR: Record<string, SidebarItem> = {
     settings: { name: "Configurações", icon: Settings, color: "#6EE7B7", href: "/settings" },
 };
 
-export const SIDEBAR_ITEMS_ARRAY = Object.values(SIDEBAR_ITEMS);
-export const SIDEBAR_ITEMS_PT_BR_ARRAY = Object.values(SIDEBAR_ITEMS_PT_BR);
+export const useSidebarItems = () => {
+    const appLanguage = useSelector((state: RootState) => state.language.appLanguage);
+    return appLanguage === "pt-br" ? SIDEBAR_ITEMS_PT_BR : SIDEBAR_ITEMS;
+};
