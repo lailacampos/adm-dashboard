@@ -60,5 +60,8 @@
     { "year": 2025, "month": 10, "total": 15644 },
     { "year": 2025, "month": 11, "total": 49685 },
     { "year": 2025, "month": 12, "total": 13014 }
-  ]
+  ],
+  "totalProducts": 237,
+  "totalUsers": 12,
+  "totalVisits": 1024
 }
