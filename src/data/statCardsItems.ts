@@ -3,86 +3,103 @@ import { DollarSign, Eye, ShoppingBag, ShoppingCart, Users } from "lucide-react"
 import { useSelector } from "react-redux";
 
 interface StatCardItem {
+    key: string;
     name: string;
     icon: React.ElementType;
     color: string;
 };
 
+const BASE_ITEM: Record<string, StatCardItem> = {
+    totalSales : { key: "totalSales", name: "Total Sales", icon: DollarSign, color: "#10B981" },
+    totalProducts: { key: "totalProducts", name: "Total Products", icon: ShoppingBag, color: "#8B5CF6" },
+    totalUsers: { key: "totalUsers", name: "Total Users", icon: Users, color: "#EC4899" },
+    totalVisits: { key: "totalVisits", name: "Total Visits", icon: Eye, color: "#3B82F6" },
+    totalOrders: { key: "totalOrders", name: "Total Orders", icon: ShoppingCart, color: "#F59E0B" },
+};
+
+const BASE_ITEM_PT_BR: Record<string, StatCardItem> = {
+    totalSales : { key: "totalSales", name: "Vendas Totais", icon: DollarSign, color: "#10B981" },
+    totalProducts: { key: "totalProducts", name: "Produtos Totais", icon: ShoppingBag, color: "#8B5CF6" },
+    totalUsers: { key: "totalUsers", name: "Usuários Totais", icon: Users, color: "#EC4899" },
+    totalVisits: { key: "totalVisits", name: "Visitas Totais", icon: Eye, color: "#3B82F6" },
+    totalOrders: { key: "totalOrders", name: "Pedidos Totais", icon: ShoppingCart, color: "#F59E0B" },
+};
+
 export const STAT_CARDS_ITEMS: Record<string, StatCardItem[]> = {
     overview: [
-        { name: "Total Sales", icon: DollarSign, color: "#10B981" },
-        { name: "Total Products", icon: ShoppingBag, color: "#8B5CF6" },
-        { name: "Total Users", icon: Users, color: "#EC4899" },
-        { name: "Total Visits", icon: Eye, color: "#3B82F6" },
+        BASE_ITEM.totalSales,
+        BASE_ITEM.totalProducts,
+        BASE_ITEM.totalUsers,
+        BASE_ITEM.totalVisits,
     ],
     products: [
-        { name: "Total Products", icon: ShoppingBag, color: "#8B5CF6" },
-        { name: "Total Views", icon: Eye, color: "#3B82F6" },
-        { name: "Total Sales", icon: DollarSign, color: "#10B981" },
-        { name: "Total Users", icon: Users, color: "#EC4899" },
+        BASE_ITEM.totalProducts,
+        BASE_ITEM.totalVisits,
+        BASE_ITEM.totalSales,
+        BASE_ITEM.totalUsers,
     ],
     users: [
-        { name: "Total Users", icon: Users, color: "#EC4899" },
-        { name: "Total Sales", icon: DollarSign, color: "#10B981" },
-        { name: "Total Orders", icon: ShoppingCart, color: "#F59E0B" },
-        { name: "Total Visits", icon: Eye, color: "#3B82F6" },
+        BASE_ITEM.totalUsers,
+        BASE_ITEM.totalVisits,
+        BASE_ITEM.totalSales,
+        BASE_ITEM.totalOrders,        
     ],
     sales: [
-        { name: "Total Sales", icon: DollarSign, color: "#10B981" },
-        { name: "Total Products", icon: ShoppingBag, color: "#8B5CF6" },
-        { name: "Total Users", icon: Users, color: "#EC4899" },
-        { name: "Total Visits", icon: Eye, color: "#3B82F6" },
+        BASE_ITEM.totalSales,
+        BASE_ITEM.totalProducts,
+        BASE_ITEM.totalUsers,
+        BASE_ITEM.totalVisits,
     ],
     orders: [
-        { name: "Total Orders", icon: ShoppingCart, color: "#F59E0B" },
-        { name: "Total Sales", icon: DollarSign, color: "#10B981" },
-        { name: "Total Products", icon: ShoppingBag, color: "#8B5CF6" },
-        { name: "Total Users", icon: Users, color: "#EC4899" },
+        BASE_ITEM.totalOrders,
+        BASE_ITEM.totalSales,
+        BASE_ITEM.totalProducts,
+        BASE_ITEM.totalUsers,
     ],
     analytics: [
-        { name: "Total Sales", icon: DollarSign, color: "#10B981" },
-        { name: "Total Products", icon: ShoppingBag, color: "#8B5CF6" },
-        { name: "Total Users", icon: Users, color: "#EC4899" },
-        { name: "Total Visits", icon: Eye, color: "#3B82F6" },
+        BASE_ITEM.totalSales,
+        BASE_ITEM.totalProducts,
+        BASE_ITEM.totalUsers,
+        BASE_ITEM.totalVisits,
     ],
 };
 
 export const STAT_CARDS_ITEMS_PT_BR: Record<string, StatCardItem[]> = {
     overview: [
-        { name: "Vendas Totais", icon: DollarSign, color: "#10B981" },
-        { name: "Produtos Totais", icon: ShoppingBag, color: "#8B5CF6" },
-        { name: "Usuários Totais", icon: Users, color: "#EC4899" },
-        { name: "Visitas Totais", icon: Eye, color: "#3B82F6" },
+        BASE_ITEM_PT_BR.totalSales,
+        BASE_ITEM_PT_BR.totalProducts,
+        BASE_ITEM_PT_BR.totalUsers,
+        BASE_ITEM_PT_BR.totalVisits,
     ],
     products: [
-        { name: "Produtos Totais", icon: ShoppingBag, color: "#8B5CF6" },
-        { name: "Visualizações Totais", icon: Eye, color: "#3B82F6" },
-        { name: "Vendas Totais", icon: DollarSign, color: "#10B981" },
-        { name: "Usuários Totais", icon: Users, color: "#EC4899" },
+        BASE_ITEM_PT_BR.totalProducts,
+        BASE_ITEM_PT_BR.totalVisits,
+        BASE_ITEM_PT_BR.totalSales,
+        BASE_ITEM_PT_BR.totalUsers,
     ],
     users: [
-        { name: "Usuários Totais", icon: Users, color: "#EC4899" },
-        { name: "Vendas Totais", icon: DollarSign, color: "#10B981" },
-        { name: "Pedidos Totais", icon: ShoppingCart, color: "#F59E0B" },
-        { name: "Visitas Totais", icon: Eye, color: "#3B82F6" },
+        BASE_ITEM_PT_BR.totalUsers,
+        BASE_ITEM_PT_BR.totalVisits,
+        BASE_ITEM_PT_BR.totalSales,
+        BASE_ITEM_PT_BR.totalOrders,        
     ],
     sales: [
-        { name: "Vendas Totais", icon: DollarSign, color: "#10B981" },
-        { name: "Produtos Totais", icon: ShoppingBag, color: "#8B5CF6" },
-        { name: "Usuários Totais", icon: Users, color: "#EC4899" },
-        { name: "Visitas Totais", icon: Eye, color: "#3B82F6" },
+        BASE_ITEM_PT_BR.totalSales,
+        BASE_ITEM_PT_BR.totalProducts,
+        BASE_ITEM_PT_BR.totalUsers,
+        BASE_ITEM_PT_BR.totalVisits,
     ],
     orders: [
-        { name: "Pedidos Totais", icon: ShoppingCart, color: "#F59E0B" },
-        { name: "Vendas Totais", icon: DollarSign, color: "#10B981" },
-        { name: "Produtos Totais", icon: ShoppingBag, color: "#8B5CF6" },
-        { name: "Usuários Totais", icon: Users, color: "#EC4899" },
+        BASE_ITEM_PT_BR.totalOrders,
+        BASE_ITEM_PT_BR.totalSales,
+        BASE_ITEM_PT_BR.totalProducts,
+        BASE_ITEM_PT_BR.totalUsers
     ],
     analytics: [
-        { name: "Vendas Totais", icon: DollarSign, color: "#10B981" },
-        { name: "Produtos Totais", icon: ShoppingBag, color: "#8B5CF6" },
-        { name: "Usuários Totais", icon: Users, color: "#EC4899" },
-        { name: "Visitas Totais", icon: Eye, color: "#3B82F6" },
+        BASE_ITEM_PT_BR.totalSales,
+        BASE_ITEM_PT_BR.totalProducts,
+        BASE_ITEM_PT_BR.totalUsers,
+        BASE_ITEM_PT_BR.totalVisits,
     ],
 };
 
