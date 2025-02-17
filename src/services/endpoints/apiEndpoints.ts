@@ -34,7 +34,9 @@ const API_ENDPOINTS = {
         STATISTICS: {
             TOTAL_PRODUCTS: "/totalProducts",
             TOTAL_USERS: "/totalUsers",
-            TOTAL_VISITS: "/totalVisits"
+            TOTAL_VISITS: "/totalVisits",
+            TOTAL_SALES: "/totalSales",
+            TOTAL_ORDERS: "/totalOrders"
         }
     }
 };
