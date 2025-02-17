@@ -18,6 +18,7 @@
   <li>Vercel (para deploy)</li>
   <li>daisyUI (componentes prontos para Tailwind)</li>
   <li>Headless UI (componentes acessíveis para React + Tailwind)</li>
+  <li>JSON Server (para API fake)</li>
 </ul>
 
 <h2>📥 Como Baixar e Rodar o Projeto Localmente</h2>
@@ -43,7 +44,8 @@ yarn dev
 </pre>
 <p>O projeto estará disponível em <a href="http://localhost:5173/" target="_blank">http://localhost:5173/</a> (ou em uma porta alternativa).</p>
 
-<h3>4️⃣ Verifique se o Tailwind CSS Está Funcionando</h3>
+
+<h3>5️⃣ Verifique se o Tailwind CSS Está Funcionando</h3>
 <p>Se quiser testar se o Tailwind está funcionando corretamente, edite o arquivo <code>src/App.tsx</code> e substitua o conteúdo por:</p>
 
 <pre>
@@ -56,7 +58,7 @@ export default function App() {
 }
 </pre>
 
-<h3>5️⃣ Possíveis Problemas</h3>
+<h3>6️⃣ Possíveis Problemas</h3>
 <ul>
   <li>Se o Tailwind não funcionar, verifique se o <code>vite.config.ts</code> contém a configuração correta:</li>
 </ul>
@@ -85,6 +87,78 @@ export default {
   plugins: [],
 }
 </pre>
+
+<h2>🛠️ Como Testar os Endpoints com JSON Server</h2>
+
+<h3>1️⃣ Instalar o JSON Server</h3>
+Se ainda não tiver instalado, rode o seguinte comando:
+<pre>
+yarn add json-server --dev
+</pre>
+
+<h3>2️⃣ Criar um Arquivo <code>db.json</code></h3>
+Crie um arquivo na raiz do projeto chamado <code>db.json</code> com os seguintes dados:
+<pre>
+{
+  "products": [
+    { "id": 1, "name": "Ração para Cachorro", "price": 50, "category": "Alimentos" },
+    { "id": 2, "name": "Brinquedo para Gato", "price": 20, "category": "Brinquedos" }
+  ],
+  "users": [
+    { "id": 1, "name": "João", "email": "joao@email.com" },
+    { "id": 2, "name": "Maria", "email": "maria@email.com" }
+  ],
+  "orders": [
+    { "id": 1, "userId": 1, "productId": 2, "quantity": 3 }
+  ],
+  "sales": [
+    { "year": 2025, "month": 1, "total": 44801 }
+  ]
+}
+</pre>
+
+<h3>3️⃣ Rodar o JSON Server</h3>
+Execute o seguinte comando para iniciar o servidor:
+<pre>
+yarn json-server --watch db.json --port 5000
+</pre>
+Agora, o JSON Server estará rodando em <a href="http://localhost:5000/" target="_blank">http://localhost:5000/</a>.
+
+<h3>4️⃣ Testar os Endpoints</h3>
+Você pode testar os endpoints no navegador, Insomnia ou Postman. Aqui estão alguns exemplos:
+
+- **Listar todos os produtos**:  
+  <pre>GET http://localhost:5000/products</pre>
+
+- **Buscar produto por ID**:  
+  <pre>GET http://localhost:5000/products/1</pre>
+
+- **Filtrar produtos por nome**:  
+  <pre>GET http://localhost:5000/products?name=Ração para Cachorro</pre>
+
+- **Criar um novo produto**:  
+  <pre>POST http://localhost:5000/products</pre>
+  Corpo da requisição:
+  <pre>
+  {
+    "name": "Coleira",
+    "price": 35,
+    "category": "Acessórios"
+  }
+  </pre>
+
+- **Atualizar um produto**:  
+  <pre>PUT http://localhost:5000/products/1</pre>
+  Corpo da requisição:
+  <pre>
+  {
+    "name": "Ração Premium para Cachorro",
+    "price": 60
+  }
+  </pre>
+
+- **Deletar um produto**:  
+  <pre>DELETE http://localhost:5000/products/1</pre>
 
 <h2>⚙️ Configuração do ESLint</h2>
 <p>O projeto já possui um arquivo <code>eslint.config.js</code> gerado automaticamente.</p>
