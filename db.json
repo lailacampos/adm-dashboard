@@ -1,16 +1,64 @@
 {
-    "products": [
-      { "id": 1, "name": "Ração para Cachorro", "price": 50 },
-      { "id": 2, "name": "Brinquedo para Gato", "price": 20 },
-      { "id": 3, "name": "Coleira", "price": 35 }
-    ],
-    "users": [
-      { "id": 1, "name": "João", "email": "joao@email.com" },
-      { "id": 2, "name": "Maria", "email": "maria@email.com" }
-    ],
-    "orders": [
-      { "id": 1, "userId": 1, "productId": 2, "quantity": 3 },
-      { "id": 2, "userId": 2, "productId": 1, "quantity": 1 }
-    ]
-  }
-  
+  "products": [
+    {
+      "id": "1",
+      "name": "Ração para Cachorro",
+      "price": 50
+    },
+    {
+      "id": "2",
+      "name": "Brinquedo para Gato",
+      "price": 20
+    },
+    {
+      "id": "3",
+      "name": "Coleira",
+      "price": 35
+    },
+    {
+      "id": 4,
+      "name": "Caminha para cachorro",
+      "price": 120
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "João",
+      "email": "joao@email.com"
+    },
+    {
+      "id": "2",
+      "name": "Maria",
+      "email": "maria@email.com"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": 1,
+      "productId": 2,
+      "quantity": 3
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "productId": 1,
+      "quantity": 1
+    }
+  ],
+  "sales": [
+    { "year": 2025, "month": 1, "total": 44801 },
+    { "year": 2025, "month": 2, "total": 33079 },
+    { "year": 2025, "month": 3, "total": 7660 },
+    { "year": 2025, "month": 4, "total": 29438 },
+    { "year": 2025, "month": 5, "total": 31409 },
+    { "year": 2025, "month": 6, "total": 24643 },
+    { "year": 2025, "month": 7, "total": 21791 },
+    { "year": 2025, "month": 8, "total": 27406 },
+    { "year": 2025, "month": 9, "total": 30471 },
+    { "year": 2025, "month": 10, "total": 15644 },
+    { "year": 2025, "month": 11, "total": 49685 },
+    { "year": 2025, "month": 12, "total": 13014 }
+  ]
+}
