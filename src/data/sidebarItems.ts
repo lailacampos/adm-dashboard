@@ -31,5 +31,5 @@ export const SIDEBAR_ITEMS_PT_BR: Record<string, SidebarItem> = {
 
 export const useSidebarItems = () => {
     const appLanguage = useSelector((state: RootState) => state.language.appLanguage);
-    return appLanguage === "pt-br" ? SIDEBAR_ITEMS_PT_BR : SIDEBAR_ITEMS;
+    return appLanguage === "pt-BR" ? SIDEBAR_ITEMS_PT_BR : SIDEBAR_ITEMS;
 };
