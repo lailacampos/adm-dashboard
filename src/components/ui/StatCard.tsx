@@ -1,14 +1,28 @@
 import { motion } from "framer-motion";
-import { DollarSign } from "lucide-react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { useCurrency } from "../../data/currency";
 
 interface StatCardProps {
+    category: string;
     name: string;
     icon: React.ElementType;
     color: string;
     value: number | string;
 }
 
-const StatCard: React.FC<StatCardProps> = ({ name="Template", icon:Icon = DollarSign, color="#6366f1", value=1234 }) => {
+const StatCard: React.FC<StatCardProps> = ({ category, name, icon:Icon, color, value=1234 }) => {
+    const language = useSelector((state: RootState) => state.language.appLanguage);
+    const currency = useCurrency();
+    
+    if(category === "totalSales") {
+        const formattedValue = new Intl.NumberFormat(language, {
+            style: "currency",
+            currency: currency,
+        }).format(value);
+        value = formattedValue;
+    }
+
     return (
         <motion.div
             whileHover={{ y: -5, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}

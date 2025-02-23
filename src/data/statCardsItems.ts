@@ -105,5 +105,5 @@ export const STAT_CARDS_ITEMS_PT_BR: Record<string, StatCardItem[]> = {
 
 export const useStatCardsItems = () => {
     const appLanguage = useSelector((state: RootState) => state.language.appLanguage);
-    return appLanguage === "pt-br" ? STAT_CARDS_ITEMS_PT_BR : STAT_CARDS_ITEMS;
+    return appLanguage === "pt-BR" ? STAT_CARDS_ITEMS_PT_BR : STAT_CARDS_ITEMS;
 }

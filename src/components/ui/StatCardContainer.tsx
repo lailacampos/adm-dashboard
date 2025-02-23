@@ -1,6 +1,8 @@
 import { motion } from "framer-motion"
 import { StatCard } from "../";
 import { useStatCardsItems } from "../../data/statCardsItems"
+import { getAllStatistics } from "../../services/stats/statsService"
+import { useState, useEffect } from "react";
 
 interface StatCardItem {
     name: string;
@@ -14,8 +16,19 @@ interface StatCardContainerProps {
 
 const StatCardContainer: React.FC<StatCardContainerProps> = ({ category }) => {
 
+    const [ values, setValues ] = useState<{ [key: string ]: number }>({});
     const STAT_CARDS_ITEMS = useStatCardsItems();
     const items: StatCardItem[] = STAT_CARDS_ITEMS[category] || [];
+
+    useEffect(() => {
+        const fetchStatistics = async () => {
+            const statistics = await getAllStatistics();
+            setValues(statistics);
+        };
+
+        fetchStatistics();
+
+    }, []);
 
     return (
         <motion.div
@@ -28,10 +41,11 @@ const StatCardContainer: React.FC<StatCardContainerProps> = ({ category }) => {
                 items.map((item, index) =>(
                     <StatCard
                         key={index}
+                        category={item.key}
                         name={item.name}
                         icon={item.icon}
                         color={item.color}
-                        value={Math.floor(Math.random() * 1000)}
+                        value={values[item.key]}
                     />
                 ))
             }
